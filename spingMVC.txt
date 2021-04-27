@@ -1,0 +1,49 @@
+SpringMVC:是基于spring的一个框架，实际上就是spring的一个模块，专门是做web开发的。
+理解是servlet的一个升级
+
+web开发底层是servlet，框架是在servlet基础上面加入一些功能，让你做web开发方便
+
+SpingMVC就是一个spring。spring是容器，ioc能管理对象，使用<bean>,@Component,@Repository,@Service,@Controller
+SpringMVC能够创建对象，放入到容器中（springmvc容器），springmvc容器中放的是控制器对象
+
+我们要做的是 使用@Controller创建控制器对象，把对象放入到springmvc容器中，把创建的对象作为控制器使用
+这个控制器对象能够接收用户的请求，显示处理结果。就当作是一个servlet使用
+
+使用@Controller注解创建的是一个普通类的对象，不是servlet，springmvc赋予了控制器对象一些额外功能
+
+web开发底层是servlet，springmvc中有一个对象是servlet：DispatherServlet（中央调度器）
+DispatherServlet：负责接收用户的所有请求，用户把请求给了DispatherServlet，之后DispatherServlet把请求转发给了
+我们的Controller对象，最后是Controller对象处理请求
+
+index.jsp-----DispatherServlet(Servlet)----转发，分配给---Controller对象（@Controller注解创建的对象）
+main.jsp                                                  MainController
+addUser.jsp                                               UserController
+
+--------------------------------------------------------------------------------------------------------------
+springmvc请求的处理流程
+1)发起some.do
+2)tomcat(web.xml--url-pattern知道 *.do的请求给DispatcherServlet)
+3)DispatcherServlet(根据springmvc.xml的配置文件知道some.do---doSome())
+4)DispatcherServlet把some.do转发MyController.doSome()方法
+5)框架执行doSome()把得到ModelAndView进行处理，转发到show.jsp
+
+上面的过程简化的方式
+some.do--DispatcherServlet--MyController
+
+---------------------------------------------------------------------------------------------------------------
+springmvc执行过程源代码分析
+1.tomcat启动，创建容器的过程
+  通过load-on-start标签指定的1，创建DispatcherServlet对象
+  DispatcherServlet它的父类是继承HttpService的，是servlet，被创建时，会执行init()方法
+  在init()方法中
+  //创建容器，读取配置文件
+  WebApplicationContext ctx = new ClassPathXmlApplicationContext("springmvc.xml");
+  //把容器对象放入到ServletContext中
+  getServletContext().setAttribute(key,ctx);
+
+  上面创建容器作用：创建@Controller注解所在的类的对象，创建MyController对象，这个对象放入到
+  springmvc的容器中，容器是map，类似map.put("MyController",MyController对象)
+
+2.请求的处理过程
+
+

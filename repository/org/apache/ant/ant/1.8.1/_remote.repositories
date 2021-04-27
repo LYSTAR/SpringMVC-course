@@ -1,0 +1,6 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Apr 22 15:47:29 CST 2021
+ant-1.8.1.jar>alimaven=
+ant-1.8.1.pom>alimaven=
+ant-1.8.1.jar>central=
+ant-1.8.1.pom>central=
