@@ -4,7 +4,7 @@ package com.lyx.vo;
 public class Student {
     //属性名和请求中参数名一样
     private String name;
-    private String age;
+    private Integer age;
 
     public Student() {
         System.out.println("===Student的无参数构造方法===");
@@ -19,11 +19,11 @@ public class Student {
         this.name = name;
     }
 
-    public String getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(String age) {
+    public void setAge(Integer age) {
         System.out.println("setAge:" + age);
         this.age = age;
     }

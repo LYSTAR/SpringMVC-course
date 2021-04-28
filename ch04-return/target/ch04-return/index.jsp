@@ -9,26 +9,48 @@
 <html>
 <head>
     <title>Title</title>
+    <script type="text/javascript" src="js/jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("button").click(function () {
+                //alert("button click");
+                $.ajax({
+                    url: "returnVoid-ajax.do",
+                    data: {
+                        name: "zhangsan",
+                        age: 20
+                    },
+                    type: "post",
+                    //dataType: "json",
+                    success: function (resp) {
+                        //从服务器端返回的是json格式的字符串
+                        //jquery会把字符串转为json对象，赋值给resp形参
+                        alert(resp.name + " " + resp.age);
+                    }
+                })
+            })
+        })
+
+    </script>
+
 </head>
 <body>
-<p>提交参数给Controller</p>
-<form action="receiveproperty.do" method="post">
+<p>处理器方法返回String表示视图名称</p>
+<form action="returnString-view.do" method="post">
     姓名:<input type="text" name="name"> <br>
     年龄:<input type="text" name="age"> <br>
     <input type="submit" value="提交参数">
 </form>
-<p>请求参数名的处理器方法的形参名不一样</p>
-<form action="receiveparam.do" method="post">
-    姓名:<input type="text" name="rname"> <br>
-    年龄:<input type="text" name="rage"> <br>
-    <input type="submit" value="提交参数">
-</form>
-<p>使用java对象接收请求参数</p>
-<form action="receiveobject.do" method="post">
+<br>
+<p>处理器方法返回String表示视图完整路径</p>
+<form action="returnString-view2.do" method="post">
     姓名:<input type="text" name="name"> <br>
     年龄:<input type="text" name="age"> <br>
     <input type="submit" value="提交参数">
 </form>
+<br>
+<br>
+<button id="btn">发起ajax请求</button>
 
 </body>
 </html>
