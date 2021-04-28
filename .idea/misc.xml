@@ -4,6 +4,7 @@
     <file type="web" url="file://$PROJECT_DIR$/ch01-hello-springMVC" />
     <file type="web" url="file://$PROJECT_DIR$/ch02-requestMapping" />
     <file type="web" url="file://$PROJECT_DIR$/ch03-receiveparam" />
+    <file type="web" url="file://$PROJECT_DIR$/ch04-return" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -13,6 +14,7 @@
         <option value="$PROJECT_DIR$/untitled1/pom.xml" />
         <option value="$PROJECT_DIR$/ch02-requestMapping/pom.xml" />
         <option value="$PROJECT_DIR$/ch03-receiveparam/pom.xml" />
+        <option value="$PROJECT_DIR$/ch04-return/pom.xml" />
       </list>
     </option>
   </component>

@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/ch01-hello-springMVC/ch01-hello-springMVC.iml" filepath="$PROJECT_DIR$/ch01-hello-springMVC/ch01-hello-springMVC.iml" />
       <module fileurl="file://$PROJECT_DIR$/ch02-requestMapping/ch02-requestMapping.iml" filepath="$PROJECT_DIR$/ch02-requestMapping/ch02-requestMapping.iml" />
       <module fileurl="file://$PROJECT_DIR$/ch03-receiveparam/ch03-receiveparam.iml" filepath="$PROJECT_DIR$/ch03-receiveparam/ch03-receiveparam.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch04-return/ch04-return.iml" filepath="$PROJECT_DIR$/ch04-return/ch04-return.iml" />
     </modules>
   </component>
 </project>
